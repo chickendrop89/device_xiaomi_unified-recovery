@@ -1,6 +1,6 @@
 #!/bin/bash
 
- export FOX_TARGET_DEVICES="topas,topaz"
+ export FOX_TARGET_DEVICES="tapas,topaz"
  export FOX_VARIANT="A13"
  export OF_MAINTAINER="chickendrop89"
 
