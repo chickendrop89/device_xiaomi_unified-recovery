@@ -34,7 +34,7 @@
  export OF_USE_LZ4_COMPRESSION=true
 
  # Security (Disables MTP&ADB during password prompt)
- # export FOX_ADVANCED_SECURITY=1
+ export OF_ADVANCED_SECURITY=1
 
  # Screen settings
  export OF_SCREEN_H=2400
