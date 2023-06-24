@@ -47,13 +47,11 @@
  # CCACHE
  export USE_CCACHE=1
  export CCACHE_EXEC=/usr/bin/ccache
+ export CCACHE_DIR="/mnt/ccache"
 
- CCACHE_DIR="/mnt/ccache"
-
- if [ -d ${CCACHE_DIR} ];
-  then
-   export CCACHE_DIR=${CCACHE_DIR}
-  else
+ # Warn if CCACHE_DIR is an invalid directory
+ if [ ! -d ${CCACHE_DIR} ];
+ then
    echo "CCACHE Directory/Partition is not mounted at \"${CCACHE_DIR}\""
    echo "Please edit the CCACHE_DIR build variable or mount the directory."
  fi
