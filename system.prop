@@ -1,0 +1,19 @@
+# Gatekeeper, Encryption
+fbe.metadata.wrappedkey=true
+vendor.gatekeeper.disable_spu=true
+
+# Platform
+ro.display.series=Redmi Note 12 4G
+ro.board.platform=bengal
+
+# Virtual A/B
+ro.virtual_ab.enabled=true
+
+# Dynamic Partitions
+ro.boot.dynamic_partitions=true
+
+# Charger suspend 
+ro.charger.enable_suspend=1
+
+# ADB
+ro.adb.secure=0
