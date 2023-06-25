@@ -91,9 +91,18 @@ jobs:
       with:
         swap-size-gb: 12
 
+    - name: Set up ccache
+      uses: hendrikmuhs/ccache-action@v1.2     
+      with:         
+        key: ${{ runner.os }}-${{ github.sha }}         
+        restore-keys: ${{ runner.os }}
+
     - name: Building recovery
       run: |
         cd ${{ steps.pwd.outputs.workspace-folder }}/fox_${{ github.event.inputs.MANIFEST_BRANCH }}
+        mkdir /home/runner/.ccache
+        sudo mkdir /mnt/ccache
+        sudo mount --bind /home/runner/.ccache /mnt/ccache
         set +e
         source build/envsetup.sh
         set -e
