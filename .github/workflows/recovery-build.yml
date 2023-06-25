@@ -30,6 +30,10 @@ on:
         description: 'DEVICE_NAME'
         required: true
         default: 'tapas'
+      DEVICE_VARIANT:
+        description: 'DEVICE_VARIANT'
+        required: true
+        default: 'tapas/topaz-A13'
       MAKEFILE_NAME:
         description: 'MAKEFILE_NAME'
         required: true
@@ -58,32 +62,32 @@ jobs:
     - name: Initialize workspace
       run: |
         mkdir workspace
-        cd workspace
+         cd workspace
         echo "workspace-folder=$(pwd)" >> $GITHUB_OUTPUT
       id: pwd
 
     - name: Prepare the build environment
       run: |
         sudo apt-get install git aria2 -y
-        git clone https://gitlab.com/OrangeFox/misc/scripts
-        cd scripts
-        sudo bash setup/android_build_env.sh
-        sed -i 's/cd -/cd ../g' setup/install_android_sdk.sh
-        sudo bash setup/install_android_sdk.sh
+        git clone --depth 1 https://gitlab.com/OrangeFox/misc/scripts
+          cd scripts
+            sudo bash setup/android_build_env.sh
+              sed -i 's/cd -/cd ../g' setup/install_android_sdk.sh
+            sudo bash setup/install_android_sdk.sh
       working-directory: ${{ steps.pwd.outputs.workspace-folder }}
-
+  
     - name: Sync OrangeFox sources and minimal manifest
       run: |
         cd ${{ steps.pwd.outputs.workspace-folder }}
-        git clone ${{ github.event.inputs.SYNC_URL }}
-        cd sync
-        ./orangefox_sync.sh --branch ${{ github.event.inputs.MANIFEST_BRANCH }} --path ${{ steps.pwd.outputs.workspace-folder }}/fox_${{ github.event.inputs.MANIFEST_BRANCH }}
+        git clone --depth 1 ${{ github.event.inputs.SYNC_URL }}
+          cd sync
+            ./orangefox_sync.sh --branch ${{ github.event.inputs.MANIFEST_BRANCH }} --path ${{ steps.pwd.outputs.workspace-folder }}/fox_${{ github.event.inputs.MANIFEST_BRANCH }}
       working-directory: ${{ steps.pwd.outputs.workspace-folder }}
 
     - name: Clone device tree
       run: |
         cd ${{ steps.pwd.outputs.workspace-folder }}/fox_${{ github.event.inputs.MANIFEST_BRANCH }}
-        git clone --depth 1 ${{ github.event.inputs.DEVICE_TREE_URL }} -b ${{ github.event.inputs.DEVICE_TREE_BRANCH }} ./${{ github.event.inputs.DEVICE_PATH }}
+          git clone --depth 1 ${{ github.event.inputs.DEVICE_TREE_URL }} -b ${{ github.event.inputs.DEVICE_TREE_BRANCH }} ./${{ github.event.inputs.DEVICE_PATH }}
       working-directory: ${{ steps.pwd.outputs.workspace-folder }}
 
     - name: Set Swap Space
@@ -99,14 +103,22 @@ jobs:
 
     - name: Building recovery
       run: |
+        HOME_CCACHE_DIR=/home/$USER/.ccache
+        BIND_CCACHE_DIR=/mnt/ccache
+
+        echo "Creating/Binding CCACHE directories ..."
+        if [ ! -d "$HOME_CCACHE_DIR" ]; then
+            mkdir $HOME_CCACHE_DIR
+        fi
+
+        sudo mkdir $BIND_CCACHE_DIR
+        sudo mount --bind $HOME_CCACHE_DIR $BIND_CCACHE_DIR
+
         cd ${{ steps.pwd.outputs.workspace-folder }}/fox_${{ github.event.inputs.MANIFEST_BRANCH }}
-        mkdir /home/runner/.ccache
-        sudo mkdir /mnt/ccache
-        sudo mount --bind /home/runner/.ccache /mnt/ccache
-        set +e
-        source build/envsetup.sh
-        set -e
-        lunch ${{ github.event.inputs.MAKEFILE_NAME }}-eng && make clean && mka adbd ${{ github.event.inputs.BUILD_TARGET }}image -j$(nproc --all)
+          set +e
+            source build/envsetup.sh
+          set -e
+          lunch ${{ github.event.inputs.MAKEFILE_NAME }}-eng && make clean && mka adbd ${{ github.event.inputs.BUILD_TARGET }}image -j$(nproc --all)
       working-directory: ${{ steps.pwd.outputs.workspace-folder }}
       continue-on-error: true
 
@@ -122,11 +134,10 @@ jobs:
         files: |
           ${{ steps.pwd.outputs.workspace-folder }}/fox_${{ github.event.inputs.MANIFEST_BRANCH }}/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/*.img
           ${{ steps.pwd.outputs.workspace-folder }}/fox_${{ github.event.inputs.MANIFEST_BRANCH }}/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/*.zip
-        name: ${{ github.event.inputs.DEVICE_NAME }}-${{ github.run_id }}
+        name: orangefox-${{ github.event.inputs.DEVICE_VARIANT }}
         tag_name: ${{ github.run_id }}
         body: |
           Manifest: ${{ github.event.inputs.MANIFEST_BRANCH }}
           Device: ${{ github.event.inputs.DEVICE_NAME }}
-          Target: ${{ github.event.inputs.BUILD_TARGET }}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
