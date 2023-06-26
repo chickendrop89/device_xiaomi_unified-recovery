@@ -1,6 +1,8 @@
 #!/system/bin/sh
 # This script is needed to automatically set device props.
 
+LOG_PATH=/tmp/recovery.log
+
 setdevicename() {
     resetprop "ro.product.name" "$1"
     resetprop "ro.build.product" "$1"
@@ -29,14 +31,14 @@ setdevicemodel() {
 
 load_tapas()
 {
-    echo "Loaded tapas variant"
+    echo "I:Variant-Script: Loaded tapas variant" | tee -a $LOG_PATH
     setdevicename "tapas"
     setdevicemodel "23021RAAEG"
 }
 
 load_topaz()
 {
-    echo "Loaded topaz (NFC) variant"
+    echo "I:Variant-Script: Loaded topaz (NFC) variant" | tee -a $LOG_PATH
     setdevicename "topaz"
     setdevicemodel "23021RAA2Y"
 }
