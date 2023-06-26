@@ -26,8 +26,8 @@
  export OF_VIRTUAL_AB_DEVICE=1
  export OF_AB_DEVICE_WITH_RECOVERY_PARTITION=1
 
- # Disable Flashlight & Green LED
- export OF_FLASHLIGHT_ENABLE=0
+ # Flashlight path & Green LED
+ export OF_FL_PATH1=/system/etc/flashlight
  export OF_USE_GREEN_LED=0
 
  # Use LZ4 ramdisk compression as specified in BoardConfig.mk

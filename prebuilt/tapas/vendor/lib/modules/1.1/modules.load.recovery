@@ -130,6 +130,7 @@ leds-gpio.ko
 leds-qti-flash.ko
 leds-qti-tri-led.ko
 leds-qpnp-vibrator-ldo-tz.ko
+camera.ko
 mi_wmark.ko
 binder_prio.ko
 ipa_fmwk.ko
@@ -194,7 +195,6 @@ wcd937x_slave_dlkm.ko
 btpower.ko
 bt_fm_slim.ko
 radio-i2c-rtc6226-qca.ko
-camera.ko
 gsim.ko
 ipam.ko
 ipanetm.ko
