@@ -22,7 +22,7 @@ on fs
     write /proc/sys/kernel/firmware_config/force_sysfs_fallback 1
 
 # Symlink Flashlight
-of fs
+on fs
     wait /sys/class/leds/led:torch/brightness
     symlink /sys/class/leds/led:torch/brightness /system/etc/flashlight/brightness
 
