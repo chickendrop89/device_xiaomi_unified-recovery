@@ -103,7 +103,7 @@ jobs:
 
     - name: Building recovery
       run: |
-        HOME_CCACHE_DIR=/home/$USER/.ccache
+        HOME_CCACHE_DIR=${{ steps.pwd.outputs.workspace-folder }}/../.ccache
         BIND_CCACHE_DIR=/mnt/ccache
 
         echo "Creating/Binding CCACHE directories ..."
