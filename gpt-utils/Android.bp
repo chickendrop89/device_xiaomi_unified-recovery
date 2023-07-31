@@ -14,26 +14,29 @@
 // limitations under the License.
 //
 
-
-cc_library {
+cc_defaults {
     name: "libgptutils.tapas",
-    vendor: true,
+    export_include_dirs: ["."],
     recovery_available: true,
     shared_libs: [
         "libcutils",
         "liblog",
         "libz",
     ],
-    cflags: [
-        "-Wall",
-        "-Werror",
-        "-Wno-unused-parameter",
-        "-D_BSG_FRAMEWORK_KERNEL_HEADERS",
-    ],
     srcs: [
         "gpt-utils.cpp",
         "recovery-ufs-bsg.cpp",
     ],
-    owner: "qti",
-    export_include_dirs: ["."],
+    vendor: true,
+}
+
+cc_library {
+    name: "libgptutils-sg.tapas",
+    defaults: ["libgptutils.tapas"],
+}
+
+cc_library {
+    name: "libgptutils-bsg.tapas",
+    defaults: ["libgptutils.tapas"],
+    cflags: ["-D_BSG_FRAMEWORK_KERNEL_HEADERS"],
 }
