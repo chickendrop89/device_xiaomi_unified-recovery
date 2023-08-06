@@ -30,6 +30,9 @@
  export OF_FL_PATH1=/system/etc/flashlight
  export OF_USE_GREEN_LED=0
 
+ # Removes the loop block errors after flashing ZIPs (Workaround)
+ export OF_LOOP_DEVICE_ERRORS_TO_LOG=1
+
  # Use LZ4 ramdisk compression as specified in BoardConfig.mk
  export OF_USE_LZ4_COMPRESSION=true
 
