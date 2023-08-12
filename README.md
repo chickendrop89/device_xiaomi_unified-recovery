@@ -35,7 +35,7 @@ Works:
 - [X] Sideload
 - [X] USB OTG
 - [X] SD Card
-- [ ] Vibrator
+- [X] Vibrator
 
 ## To use it:
 
