@@ -21,11 +21,6 @@ on fs
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
     write /proc/sys/kernel/firmware_config/force_sysfs_fallback 1
 
-# Symlink Flashlight
-on fs
-    wait /sys/class/leds/led:torch/brightness
-    symlink /sys/class/leds/led:torch/brightness /system/etc/flashlight/brightness
-
 on fs
     chmod 0660 /dev/qseecom
     chown system drmrpc /dev/qseecom
@@ -50,3 +45,7 @@ on property:twrp.modules.loaded=true
 on property:twrp.modules.loaded=true
     write /sys/class/leds/vibrator/trigger transient
     start vibratorfeature-hal-service
+
+# Symlink Flashlight
+on property:twrp.modules.loaded=true
+    symlink /sys/class/leds/led:torch/brightness /system/etc/flashlight/brightness
