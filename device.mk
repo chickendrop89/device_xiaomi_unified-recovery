@@ -94,6 +94,10 @@ TW_HAS_EDL_MODE         := true
 TW_INCLUDE_FASTBOOTD    := true
 TWRP_INCLUDE_LOGCAT     := true
 
+# Set panel refresh rate to 90 Hertz for smoother experience
+# Possible supported frequencies: 30, 60, 90, 120
+TW_FRAMERATE := 90
+
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone7/temp"
 TW_BRIGHTNESS_PATH      := "/sys/class/backlight/panel0-backlight/brightness"
 TW_LOAD_VENDOR_MODULES  += "adsp_loader_dlkm.ko focaltech_ts_i2c.ko qti_battery_charger.ko camera.ko"
