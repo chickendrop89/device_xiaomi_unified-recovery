@@ -26,6 +26,9 @@
  export FOX_VIRTUAL_AB_DEVICE=1
  export OF_AB_DEVICE_WITH_RECOVERY_PARTITION=1
 
+ # Store settings on /data/recovery instead of internal storage
+ export FOX_USE_DATA_RECOVERY_FOR_SETTINGS=1
+
  # Flashlight path & Green LED
  export OF_FL_PATH1=/system/etc/flashlight
  export OF_USE_GREEN_LED=0
