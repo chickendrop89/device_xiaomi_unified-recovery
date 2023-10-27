@@ -54,6 +54,7 @@
  # CCACHE
  export USE_CCACHE=1
  export CCACHE_EXEC=/usr/bin/ccache
+ export CCACHE_MAXSIZE="32G"
  export CCACHE_DIR="/mnt/ccache"
 
  # Warn if CCACHE_DIR is an invalid directory
