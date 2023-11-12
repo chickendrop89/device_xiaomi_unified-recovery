@@ -33,7 +33,7 @@ on:
       DEVICE_VARIANT:
         description: 'DEVICE_VARIANT'
         required: true
-        default: 'tapas/topaz-A13'
+        default: 'tapas/topaz-A13+'
       MAKEFILE_NAME:
         description: 'MAKEFILE_NAME'
         required: true
