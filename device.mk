@@ -98,6 +98,9 @@ TWRP_INCLUDE_LOGCAT     := true
 # Possible supported frequencies: 30, 60, 90, 120
 TW_FRAMERATE := 90
 
+# Blacklist Goodix fingerprint. There's no reason to include this input in recovery
+TW_INPUT_BLACKLIST := "uinput-goodix"
+
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/class/thermal/thermal_zone7/temp"
 TW_BRIGHTNESS_PATH      := "/sys/class/backlight/panel0-backlight/brightness"
 TW_LOAD_VENDOR_MODULES  += "adsp_loader_dlkm.ko focaltech_ts_i2c.ko goodix_ts_9896.ko qti_battery_charger.ko camera.ko"
