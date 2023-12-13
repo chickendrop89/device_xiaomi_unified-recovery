@@ -40,6 +40,5 @@ Works:
 ## To use it:
 
 ```
-fastboot flash recovery_a out/target/product/tapas/recovery.img
-fastboot flash recovery_b out/target/product/tapas/recovery.img
+fastboot flash recovery out/target/product/tapas/recovery.img --slot=all
 ```
