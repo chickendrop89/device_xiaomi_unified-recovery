@@ -69,9 +69,6 @@ AB_OTA_POSTINSTALL_CONFIG += \
     FILESYSTEM_TYPE_vendor=erofs \
     POSTINSTALL_OPTIONAL_vendor=true
 
-PRODUCT_EXTRA_RECOVERY_KEYS += \
-    vendor/recovery/security/miui
-
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
 
