@@ -2,8 +2,9 @@
 
 Redmi Note 12 4G (codenamed _"topaz/tapas"_) is a mid-range smartphone from Xiaomi announced in March 2023.
 
-[![GitHub Total Downloads](https://img.shields.io/github/downloads/chickendrop89/orangefox_device_xiaomi_tapas/total?style=social&color=white&link=https%3A%2F%2Fgithub.com%2Fchickendrop89%2Forangefox_device_xiaomi_tapas%2Freleases)](https://github.com/chickendrop89/orangefox_device_xiaomi_tapas/releases) [![SourceForge Total Downloads](https://img.shields.io/sourceforge/dt/orangefox-device-xiaomi-tapas?style=social&logo=sourceforge&logoColor=%23000000)](https://sourceforge.net/projects/orangefox-device-xiaomi-tapas/files)
-
+## Automated builds
+[![GitHub Releases](https://img.shields.io/github/downloads/chickendrop89/device_xiaomi_tapas-recovery/total?style=for-the-badge&logo=github&logoColor=white&label=GitHub%20releases&labelColor=black&color=orange)](https://github.com/chickendrop89/orangefox_device_xiaomi_tapas/releases)
+[![SourceForge](https://img.shields.io/sourceforge/dt/orangefox-device-xiaomi-tapas?style=for-the-badge&logo=sourceforge&logoColor=white&label=SourceForge&labelColor=black&color=orange)](https://sourceforge.net/projects/orangefox-device-xiaomi-tapas/files)
 
 ## Device specifications
 
