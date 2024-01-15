@@ -1,4 +1,4 @@
-service variant-script /system/bin/variant-script.sh
+service unified-script /system/bin/unified-script.sh
     user root
     group root
     disabled
@@ -29,7 +29,7 @@ on fs
     install_keyring
 
 on boot
-    start variant-script
+    start unified-script
     setprop sys.usb.config adb
 
 on property:twrp.modules.loaded=true
@@ -49,3 +49,4 @@ on property:twrp.modules.loaded=true
 # Symlink Flashlight
 on property:twrp.modules.loaded=true
     symlink /sys/class/leds/led:torch/brightness /system/etc/flashlight/brightness
+#
