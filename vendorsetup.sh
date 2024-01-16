@@ -25,6 +25,7 @@
  # A/B partitioning
  export FOX_VIRTUAL_AB_DEVICE=1
  export OF_AB_DEVICE_WITH_RECOVERY_PARTITION=1
+ export OF_IGNORE_LOGICAL_MOUNT_ERRORS=1
  export OF_ENABLE_LPTOOLS=1
 
  # Store settings at /data/recovery instead of internal storage
