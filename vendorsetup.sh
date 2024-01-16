@@ -28,6 +28,9 @@
  export OF_IGNORE_LOGICAL_MOUNT_ERRORS=1
  export OF_ENABLE_LPTOOLS=1
 
+ # Ensure that /sdcard is bind-unmounted before f2fs data repair or format
+ export OF_UNBIND_SDCARD_F2FS=1
+
  # Store settings at /data/recovery instead of internal storage
  export FOX_USE_DATA_RECOVERY_FOR_SETTINGS=1
 
