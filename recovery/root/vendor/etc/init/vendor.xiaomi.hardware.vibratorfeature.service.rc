@@ -9,5 +9,5 @@ service vibratorfeature-hal-service /vendor/bin/hw/vendor.xiaomi.hardware.vibrat
     group root input audio
     onrestart restart vibratorfeature
     setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib64/hw:/system/lib64:/sbin
-    disable
+    disabled
     seclabel u:r:recovery:s0
