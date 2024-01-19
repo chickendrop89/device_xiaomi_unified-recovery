@@ -225,7 +225,7 @@ subsystem mem_buf_vm
 
 #qvr
 /dev/qvr_external_sensor_ioctl      0660  system  system
-/sys/kernel/qvr_external_sensor/fd  0660  system  system
+/sys/kernel/qvr_external_sensor fd  0660  system  system
 /dev/bus/usb/001/002      0660   system     system
 /dev/bus/usb/001/003      0660   system     system
 /dev/bus/usb/001/004      0660   system     system
@@ -248,6 +248,7 @@ subsystem mem_buf_vm
 /sys/devices/platform/soc/18800000.qcom,icnss/net/wlan*/queues/rx-* rps_cpus      0660   system     system
 /sys/devices/platform/soc/1c00000.qcom,pcie/pci0000:00/0000:00:00.0/0000:01:00.0/net/wlan*/queues/rx-* rps_cpus      0660   system     system
 /dev/spidev0.0            0660   system     audio
+/dev/spidev0.1            0660   system     system
 /dev/i2c-7                0660   system     audio
 /dev/msm_camera/*         0660   system     camera
 /dev/gemini/              0660   system     camera
@@ -381,10 +382,7 @@ subsystem mem_buf_vm
 /dev/nfc-nci              0660    nfc         nfc
 /dev/nq-nci               0660    nfc         nfc
 /dev/assd                 0660    nfc         nfc
-/dev/st21nfc              0660    nfc         nfc
-
-# eSE permissions
-/dev/st54spi_gpio         0660   system     system
+/dev/st21nfc              0777    nfc         nfc
 
 # UIO devices
 /dev/uio0                 0660   system     system
@@ -411,10 +409,6 @@ subsystem mem_buf_vm
 #ImproveTouch device
 /dev/hbtp_input           0660   system     system
 /dev/hbtp_vm              0660   system     system
-
-# LegacyTouch device
-/sys/kernel/qts/primary/trusted_touch*    0660   system     system
-/sys/kernel/qts/secondary/trusted_touch*  0660   system     system
 
 # Add device block for FRP
 /dev/block/platform/soc/7824900.sdhci/by-name/config    0600   system     system
@@ -495,7 +489,6 @@ subsystem mem_buf_vm
 /sys/class/graphics/fb0     modes                    0664    system  graphics
 /sys/class/graphics/fb0     mode                     0664    system  graphics
 /sys/class/graphics/fb0     msm_cmd_autorefresh_en   0664    system  graphics
-*/
 
 /sys/devices/platform/soc/ae00000.qcom,mdss_mdp power/control 0664 system graphics
 
@@ -562,19 +555,3 @@ subsystem mem_buf_vm
 
 # devcoredump data attributes
 /sys/class/devcoredump/devcd*                           data                            0600    system  system
-
-# qdss sysfs node attributes
-/sys/bus/coresight/devices/coresight-tmc-etf/curr_sink          0664   system   system
-/sys/bus/coresight/devices/coresight-tmc-etf/enable_sink        0664   system   system
-/sys/bus/coresight/devices/coresight-tmc-etr/curr_sink          0664   system   system
-/sys/bus/coresight/devices/coresight-tmc-etr/enable_sink        0664   system   system
-/sys/bus/coresight/devices/coresight-tmc-etr/out_mode           0664   system   system
-/sys/bus/coresight/devices/coresight-tpiu/curr_sink             0664   system   system
-/sys/bus/coresight/devices/coresight-tpiu/out_mode              0664   system   system
-/sys/bus/coresight/devices/coresight-stm/enable                 0664   system   system
-/sys/bus/coresight/devices/coresight-stm/enable_source          0664   system   system
-/sys/bus/coresight/devices/coresight-hwevent/enable             0664   system   system
-/sys/bus/coresight/devices/coresight-stm/hwevent_enable         0664   system   system
-/sys/bus/coresight/devices/coresight-hwevent/setreg             0664   system   system
-/sys/bus/coresight/devices/coresight-swao-csr/timestamp         0664   system   system
-/sys/bus/coresight/devices/coresight-modem-diag/enable_source   0664   system   system
