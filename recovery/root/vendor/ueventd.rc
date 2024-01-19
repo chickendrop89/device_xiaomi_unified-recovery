@@ -66,10 +66,6 @@
 # be added to search path for firmware loading
 firmware_directories /vendor/firmware_mnt/image/
 
-subsystem dma_heap
-    devname uevent_devpath
-    dirname /dev/dma_heap
-
 subsystem mem_buf_vm
     devname uevent_devpath
     dirname /dev/mem_buf_vm
