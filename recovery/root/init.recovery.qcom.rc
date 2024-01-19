@@ -24,6 +24,11 @@ on fs
 on boot
     setprop sys.usb.config adb
 
+# Haptic feedback
+on boot
+    write /sys/class/leds/vibrator/trigger transient
+    start vibratorfeature-hal-service
+
 on property:twrp.modules.loaded=true
     mkdir /firmware
     mount vfat /dev/block/bootdevice/by-name/modem${ro.boot.slot_suffix} /firmware ro
@@ -33,7 +38,7 @@ on property:twrp.modules.loaded=true
     start health-hal-2-1
     umount /firmware
 
-# Haptic feedback
+# Symlink Flashlight
 on property:twrp.modules.loaded=true
-    write /sys/class/leds/vibrator/trigger transient
-    start vibratorfeature-hal-service
+    symlink /sys/class/leds/led:torch/brightness /system/etc/flashlight/brightness
+#
