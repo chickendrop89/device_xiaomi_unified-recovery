@@ -8,6 +8,7 @@ service unified-script /system/bin/unified-script.sh
 # Set SELinux to Permissive
 on early-init
     write /sys/fs/selinux/enforce 0
+    write /proc/sys/kernel/firmware_config/force_sysfs_fallback 1
 
 on early-fs
     write /proc/sys/walt/sched_lib_name "recovery,magiskboot,Updater,updater,update_engine_sideload"
@@ -19,7 +20,6 @@ on init
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
-    write /proc/sys/kernel/firmware_config/force_sysfs_fallback 1
 
 on fs
     chmod 0660 /dev/qseecom
@@ -44,7 +44,6 @@ on property:twrp.modules.loaded=true
     write /sys/kernel/boot_adsp/boot 1
     wait /sys/class/power_supply/battery
     start health-hal-2-1
-    umount /firmware
 
 # Symlink Flashlight
 on property:twrp.modules.loaded=true
