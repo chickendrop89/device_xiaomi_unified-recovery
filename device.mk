@@ -113,7 +113,6 @@ TW_MAX_BRIGHTNESS       := 2047
 TW_EXTRA_LANGUAGES      := true
 TW_DEFAULT_BRIGHTNESS   := 1020
 TW_EXCLUDE_APEX         := true
-TW_HAS_EDL_MODE         := true
 TW_INCLUDE_FASTBOOTD    := true
 TWRP_INCLUDE_LOGCAT     := true
 TW_INCLUDE_PYTHON       := true
