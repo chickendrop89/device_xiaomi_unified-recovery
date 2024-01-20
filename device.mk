@@ -4,7 +4,16 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+DEVICE_PATH := device/xiaomi/tapas
+
+# Configure base.mk
+$(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
+
+# Configure core_64_bit_only.mk
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit_only.mk)
+
 # Configure Virtual A/B
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
 
 # Enable updating of APEXes
@@ -16,8 +25,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 # Configure emulated_storage.mk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
-# Building with minimal manifest
-ALLOW_MISSING_DEPENDENCIES := true
+# OTA Assert
+TARGET_OTA_ASSERT_DEVICE := tapas,topaz
 
 # Boot control, Firmware
 PRODUCT_PACKAGES += \
@@ -55,8 +64,24 @@ TARGET_SCREEN_WIDTH   := 1080
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 PRODUCT_BUILD_SUPER_PARTITION  := false
 
-# Virutal A/B
-ENABLE_VIRTUAL_AB := true
+# Virtual A/B
+AB_OTA_UPDATER := true
+AB_OTA_PARTITIONS += \
+    boot \
+    dtbo \
+    init_boot \
+    odm \
+    product \
+    recovery \
+    system \
+    system_dlkm \
+    system_ext \
+    vbmeta \
+    vbmeta_system \
+    vendor \
+    vendor_boot \
+    vendor_dlkm
+
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
     POSTINSTALL_PATH_system=system/bin/otapreopt_script \
@@ -70,10 +95,11 @@ AB_OTA_POSTINSTALL_CONFIG += \
     POSTINSTALL_OPTIONAL_vendor=true
 
 # Soong namespaces
-PRODUCT_SOONG_NAMESPACES += $(LOCAL_PATH)
+PRODUCT_SOONG_NAMESPACES += \
+	$(DEVICE_PATH) \
+	vendor/qcom/opensource/commonsys-intf/display
 
 # TWRP - Specifics
-TW_BACKUP_EXCLUSIONS    := /data/fonts
 TW_THEME                := portrait_hdpi
 TW_DEFAULT_LANGUAGE     := en
 TW_USE_TOOLBOX          := true
@@ -85,11 +111,12 @@ TW_INCLUDE_RESETPROP    := true
 TW_INCLUDE_LIBRESETPROP := true
 TW_MAX_BRIGHTNESS       := 2047
 TW_EXTRA_LANGUAGES      := true
-TW_DEFAULT_BRIGHTNESS   := 200
+TW_DEFAULT_BRIGHTNESS   := 1020
 TW_EXCLUDE_APEX         := true
 TW_HAS_EDL_MODE         := true
 TW_INCLUDE_FASTBOOTD    := true
 TWRP_INCLUDE_LOGCAT     := true
+TW_INCLUDE_PYTHON       := true
 
 # Set panel refresh rate to 90 Hertz for smoother experience
 # Possible supported frequencies: 30, 60, 90, 120
@@ -114,7 +141,6 @@ TW_SUPPORT_INPUT_AIDL_HAPTICS_FIX_OFF := true
 TW_INCLUDE_CRYPTO               := true
 TW_INCLUDE_CRYPTO_FBE           := true
 TW_INCLUDE_FBE_METADATA_DECRYPT := true
-TW_USE_FSCRYPT_POLICY           := 2
 BOARD_USES_QCOM_FBE_DECRYPTION  := true
 PLATFORM_VERSION                := 99.87.36
 PLATFORM_VERSION_LAST_STABLE    := $(PLATFORM_VERSION)
