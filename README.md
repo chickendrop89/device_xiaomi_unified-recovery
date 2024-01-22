@@ -1,6 +1,10 @@
-# orangefox_device_xiaomi_tapas
+# device_xiaomi_tapas-recovery
 
 Redmi Note 12 4G (codenamed _"topaz/tapas"_) is a mid-range smartphone from Xiaomi announced in March 2023.
+
+## Automated OrangeFox (Unofficial) builds
+[![GitHub Releases](https://img.shields.io/github/downloads/chickendrop89/device_xiaomi_tapas-recovery/total?style=for-the-badge&logo=github&logoColor=white&label=GitHub%20releases&labelColor=black&color=orange)](https://github.com/chickendrop89/orangefox_device_xiaomi_tapas/releases)
+[![SourceForge](https://img.shields.io/sourceforge/dt/orangefox-device-xiaomi-tapas?style=for-the-badge&logo=sourceforge&logoColor=white&label=SourceForge&labelColor=black&color=orange)](https://sourceforge.net/projects/orangefox-device-xiaomi-tapas/files)
 
 ## Device specifications
 
@@ -21,25 +25,3 @@ Camera                  | 50 MP (wide), 2 MP (macro), 12 MP (ultrawide), 13 MP (
 ## Device picture
 
 ![Redmi Note 12 4G](https://i02.appmifile.com/224_operator_sg/10/03/2023/cdf4a7f40a92668d1c8fe2fcc5045ea8.png)
-
-## Features
-
-Works:
-
-- [X] ADB
-- [X] Decryption
-- [X] Display
-- [X] Fasbootd
-- [X] Flashing
-- [X] MTP
-- [X] Sideload
-- [X] USB OTG
-- [X] SD Card
-- [X] Vibrator
-
-## To use it:
-
-```
-fastboot flash recovery_a out/target/product/tapas/recovery.img
-fastboot flash recovery_b out/target/product/tapas/recovery.img
-```
