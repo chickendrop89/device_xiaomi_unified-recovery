@@ -12,7 +12,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/xiaomi/tapas/device.mk)
 
 # Inherit from TWRP common configuration
-$(call inherit-product, vendor/twrp/config/common.mk)
+$(call inherit-product, vendor/pb/config/common.mk)
 
 ## Device identifier
 PRODUCT_DEVICE := tapas
