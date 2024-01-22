@@ -29,7 +29,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 TARGET_OTA_ASSERT_DEVICE := tapas,topaz
 
 # PBRP - Flashlight specific
-PB_TORCH_PATH := /system/etc/flashlight
+PB_TORCH_PATH := "/system/etc/flashlight"
 
 # Boot control, Firmware
 PRODUCT_PACKAGES += \
