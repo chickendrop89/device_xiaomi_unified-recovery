@@ -104,6 +104,9 @@ BOARD_PARTITION_LIST := $(call to-upper, $(BOARD_QTI_DYNAMIC_PARTITIONS_PARTITIO
 $(foreach p, $(BOARD_PARTITION_LIST), $(eval BOARD_$(p)IMAGE_FILE_SYSTEM_TYPE := erofs))
 $(foreach p, $(BOARD_PARTITION_LIST), $(eval TARGET_COPY_OUT_$(p) := $(call to-lower, $(p))))
 
+BOARD_PARTITION_LIST += system_dlkm
+TARGET_COPY_OUT_SYSTEM_DLKM := system_dlkm
+
 # Filesystems
 TARGET_USERIMAGES_USE_EXT4    := true
 TARGET_USERIMAGES_USE_F2FS    := true
