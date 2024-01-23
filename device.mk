@@ -31,6 +31,9 @@ TARGET_OTA_ASSERT_DEVICE := tapas,topaz
 # PBRP - Flashlight specific
 PB_TORCH_PATH := "/system/etc/flashlight"
 
+# PBRP - Disable Treble compatibility check
+PB_DISABLE_DEFAULT_TREBLE_COMP := true
+
 # Boot control, Firmware
 PRODUCT_PACKAGES += \
     android.hardware.boot@1.2-impl-qti.recovery \
