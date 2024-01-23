@@ -30,6 +30,7 @@ TARGET_OTA_ASSERT_DEVICE := tapas,topaz
 
 # PBRP - Flashlight specific
 PB_TORCH_PATH := "/system/etc/flashlight"
+PB_TORCH_MAX_BRIGHTNESS := 1
 
 # PBRP - Disable Treble compatibility check
 PB_DISABLE_DEFAULT_TREBLE_COMP := true
