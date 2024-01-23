@@ -104,19 +104,16 @@ BOARD_PARTITION_LIST := $(call to-upper, $(BOARD_QTI_DYNAMIC_PARTITIONS_PARTITIO
 $(foreach p, $(BOARD_PARTITION_LIST), $(eval BOARD_$(p)IMAGE_FILE_SYSTEM_TYPE := erofs))
 $(foreach p, $(BOARD_PARTITION_LIST), $(eval TARGET_COPY_OUT_$(p) := $(call to-lower, $(p))))
 
-BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
-TARGET_COPY_OUT_SYSTEM_EXT := system_ext
-TARGET_COPY_OUT_PRODUCT    := product
-
 # Filesystems
 TARGET_USERIMAGES_USE_EXT4    := true
 TARGET_USERIMAGES_USE_F2FS    := true
 TARGET_USES_MKE2FS            := true
 BOARD_HAS_LARGE_FILESYSTEM    := true
 
+BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
+
 # Workaround for error copying vendor files to recovery ramdisk
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
-TARGET_COPY_OUT_VENDOR := vendor
 
 # System Properties
 TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
