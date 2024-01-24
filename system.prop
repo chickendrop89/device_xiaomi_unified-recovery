@@ -1,6 +1,7 @@
 # Gatekeeper, Encryption
 fbe.metadata.wrappedkey=true
 vendor.gatekeeper.disable_spu=true
+keymaster_ver=4.1
 
 # Platform
 ro.display.series=Redmi Note 12 4G
