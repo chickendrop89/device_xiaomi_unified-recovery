@@ -74,16 +74,6 @@
         </interface>
         <fqname>@1.1::INetd/default</fqname>
     </hal>
-    <hal format="hidl">
-        <name>android.system.wifi.keystore</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IKeystore</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::IKeystore/default</fqname>
-    </hal>
     <hal format="native">
         <name>netutils-wrapper</name>
         <version>1.0</version>

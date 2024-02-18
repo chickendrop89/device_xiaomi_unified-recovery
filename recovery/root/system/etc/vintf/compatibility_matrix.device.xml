@@ -120,15 +120,6 @@
             <instance>default</instance>
         </interface>
     </hal>
-    <hal format="hidl" optional="true">
-        <name>android.hardware.wifi.supplicant</name>
-        <version>1.0-2</version>
-        <interface>
-            <name>ISupplicant</name>
-            <instance>default</instance>
-            <instance>wigigp2p</instance>
-        </interface>
-    </hal>
     <hal format="aidl" optional="true">
         <name>android.se.omapi</name>
         <interface>
@@ -200,18 +191,6 @@
         <interface>
             <name>IUceService</name>
             <instance>com.qualcomm.qti.uceservice</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>com.qualcomm.qti.wifidisplayhal</name>
-        <version>1.0</version>
-        <interface>
-            <name>IDSManager</name>
-            <instance>wifidisplaydshal</instance>
-        </interface>
-        <interface>
-            <name>IHDCPSession</name>
-            <instance>wifidisplayhdcphal</instance>
         </interface>
     </hal>
     <hal format="hidl" optional="true">
@@ -1030,74 +1009,6 @@
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>vendor.qti.hardware.wifi.hostapd</name>
-        <version>1.0-3</version>
-        <interface>
-            <name>IHostapdVendor</name>
-            <instance>default</instance>
-            <instance>wigighostapd</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.qti.hardware.wifi.supplicant</name>
-        <version>2.0-3</version>
-        <interface>
-            <name>ISupplicantVendor</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="aidl" optional="true">
-        <name>vendor.qti.hardware.wifi.supplicant</name>
-        <interface>
-            <name>ISupplicantVendor</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.qti.hardware.wifi.wificfr</name>
-        <version>1.0</version>
-        <interface>
-            <name>IWificfr</name>
-            <instance>wificfr</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.qti.hardware.wifi.wifilearner</name>
-        <version>1.0</version>
-        <interface>
-            <name>IWifiStats</name>
-            <instance>wifiStats</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.qti.hardware.wifi.wifimyftm</name>
-        <version>1.0</version>
-        <interface>
-            <name>IWifiMyFtm</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.qti.hardware.wifidisplaysession</name>
-        <version>1.0</version>
-        <interface>
-            <name>IWifiDisplaySession</name>
-            <instance>wifidisplaysession</instance>
-        </interface>
-        <interface>
-            <name>IWifiDisplaySessionAudioTrack</name>
-            <instance>wifidisplaysessionaudiotrack</instance>
-        </interface>
-        <interface>
-            <name>IWifiDisplaySessionImageTrack</name>
-            <instance>wifidisplaysessionimagetrack</instance>
-        </interface>
-        <interface>
-            <name>IWifiDisplaySessionVideoTrack</name>
-            <instance>wifidisplaysessionvideotrack</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
         <name>vendor.qti.hardware.wigig.netperftuner</name>
         <version>1.0</version>
         <interface>
@@ -1232,14 +1143,6 @@
         <version>1.0</version>
         <interface>
             <name>IBluetoothService</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
-        <name>vendor.xiaomi.cit.wifi</name>
-        <version>1.0</version>
-        <interface>
-            <name>IWifiService</name>
             <instance>default</instance>
         </interface>
     </hal>
