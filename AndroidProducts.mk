@@ -4,6 +4,6 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-PRODUCT_MAKEFILES := $(LOCAL_DIR)/twrp_tapas.mk
+PRODUCT_MAKEFILES := $(LOCAL_DIR)/pb_tapas.mk
 
-COMMON_LUNCH_CHOICES := twrp_tapas-eng
+COMMON_LUNCH_CHOICES := pb_tapas-eng
