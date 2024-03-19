@@ -25,3 +25,12 @@ PRODUCT_MODEL := Redmi Note 12 4G
 PRODUCT_MANUFACTURER := Xiaomi
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
+
+# PBRP - Flashlight path
+PB_TORCH_PATH := "/system/etc/flashlight"
+
+# PBRP - Disable flashlight brightness slider
+PB_TORCH_MAX_BRIGHTNESS := 1
+
+# PBRP - Disable Treble compatibility check
+PB_DISABLE_DEFAULT_TREBLE_COMP := true
