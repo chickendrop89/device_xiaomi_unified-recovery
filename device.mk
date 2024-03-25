@@ -112,15 +112,12 @@ TW_EXCLUDE_TWRPAPP      := true
 TW_INCLUDE_FASTBOOTD    := true
 TWRP_INCLUDE_LOGCAT     := true
 TW_INCLUDE_PYTHON       := true
+TW_FRAMERATE            := 60
 
 # TWRP notch offsets
 TW_STATUS_ICONS_ALIGN := center
 TW_Y_OFFSET := 99
 TW_H_OFFSET := -99
-
-# Set panel refresh rate to 90 Hertz for smoother experience
-# Possible supported frequencies: 30, 60, 90, 120
-TW_FRAMERATE := 90
 
 # Blacklist Goodix fingerprint. There's no reason to include this input in recovery
 TW_INPUT_BLACKLIST := "uinput-goodix"
