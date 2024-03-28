@@ -111,9 +111,6 @@ TARGET_COPY_OUT_SYSTEM_DLKM := system_dlkm
 TARGET_USERIMAGES_USE_EXT4    := true
 TARGET_USERIMAGES_USE_F2FS    := true
 TARGET_USES_MKE2FS            := true
-BOARD_HAS_LARGE_FILESYSTEM    := true
-
-BOARD_USERDATAIMAGE_FILE_SYSTEM_TYPE := f2fs
 
 # Workaround for error copying vendor files to recovery ramdisk
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
