@@ -41,6 +41,9 @@ TARGET_PREBUILT_KERNEL        := /dev/null # empty kernel image
 BOARD_MKBOOTIMG_ARGS          += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_MKBOOTIMG_ARGS          += --pagesize $(BOARD_KERNEL_PAGESIZE)
 
+# device information for "fastboot update <zip-file>"
+TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
+
 # GSI && GKI
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
 BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT := true
