@@ -44,6 +44,7 @@ BOARD_MKBOOTIMG_ARGS          += --pagesize $(BOARD_KERNEL_PAGESIZE)
 # GSI && GKI
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
 BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT := true
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3 # disable hashtree/verification
 BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
 
 # Despite being VA/B device, there is a dedicated recovery partition
