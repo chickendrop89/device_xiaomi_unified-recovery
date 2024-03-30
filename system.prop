@@ -10,9 +10,6 @@ ro.board.platform=bengal
 # FUSE passthrough
 persist.sys.fuse.passthrough.enable=true
 
-# Virtual A/B
-ro.virtual_ab.enabled=true
-
 # Dynamic Partitions
 ro.boot.dynamic_partitions=true
 
