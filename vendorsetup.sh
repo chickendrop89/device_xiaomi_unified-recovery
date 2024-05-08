@@ -36,7 +36,7 @@
  export FOX_USE_DATA_RECOVERY_FOR_SETTINGS=1
 
  # Flashlight & LEDs
- export OF_FL_PATH1=/system/etc/flashlight
+ export OF_FL_PATH1="/system/etc/flashlight"
  export OF_USE_GREEN_LED=0
 
  # Remove the loop block errors after flashing ZIPs (Workaround)
@@ -58,7 +58,7 @@
 
  # CCACHE
  export USE_CCACHE=1
- export CCACHE_EXEC=/usr/bin/ccache
+ export CCACHE_EXEC="/usr/bin/ccache"
  export CCACHE_MAXSIZE="32G"
  export CCACHE_DIR="/mnt/ccache"
 
