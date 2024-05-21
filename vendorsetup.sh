@@ -43,7 +43,7 @@
  export OF_LOOP_DEVICE_ERRORS_TO_LOG=1
 
  # Use LZ4 ramdisk compression as specified in BoardConfig.mk
- export OF_USE_LZ4_COMPRESSION=true
+ export OF_USE_LZ4_COMPRESSION=1
 
  # Use latest "magiskboot" binaries as this is a relatively new device
  export FOX_USE_UPDATED_MAGISKBOOT=1
