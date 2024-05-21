@@ -45,6 +45,9 @@
  # Use LZ4 ramdisk compression as specified in BoardConfig.mk
  export OF_USE_LZ4_COMPRESSION=true
 
+ # Use latest "magiskboot" binaries as this is a relatively new device
+ export FOX_USE_UPDATED_MAGISKBOOT=1
+
  # Security (Disables MTP & ADB during password prompt)
  export OF_ADVANCED_SECURITY=1
 
