@@ -39,9 +39,24 @@ do_prep() {
 	fi
 }
 
+backup_fox() {
+	local f=$1;
+	if [ -f $f ]; then
+		local x=$(unzip -lq $f | grep "payload.bin");
+		[ -n "$x" ] && return; # standard payload.bin - no need for a backup
+	fi
+
+	local source="/dev/block/bootdevice/by-name/recovery";
+	local dest="/tmp/fox_backup.img";
+	if [ ! -f $dest ]; then
+		LOGMSG "Backing up OrangeFox to \"$dest\"...";
+		dd bs=1048576 if=$source of=$dest &>/dev/null;
+	fi
+}
 
 ##
-LOGMSG "Running pre-ROM-flash script...";
-do_prep;
-exit 0;
+	LOGMSG "Running pre-ROM-flash script...";
+	do_prep;
+	backup_fox "$@";
+	exit 0;
 #
