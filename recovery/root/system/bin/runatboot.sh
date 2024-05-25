@@ -1,4 +1,4 @@
-#!/system/bin/sh
+#!/sbin/bash
 #
 #	This file is part of the OrangeFox Recovery Project
 # 	Copyright (C) 2024 The OrangeFox Recovery Project
@@ -20,20 +20,21 @@
 #
 
 load_touch_drivers() {
-	# try focaltech_ts
-	local f=$(lsmod | grep focaltech_ts_i2c);
-	[ -n "$f" ] && return; # focaltech_ts is loaded - return
+	local path1=/vendor/lib/modules/1.1;
+	local path2=/lib/modules;
+	local modules="focaltech_ts_i2c goodix_ts_9896";
 
-	# try to load the focaltech_ts module
-	modprobe -d /lib/modules focaltech_ts_i2c;
-	[ "$?" = "0" ] && return; # focaltech_ts is loaded - return
+	# loop through the touch modules
+	for i in $modules
+	do
+		# check whether the module is already loaded
+		local f=$(lsmod | grep $i);
+		[ -n "$f" ] && return; # module is already loaded - return
 
-	# try goodix_ts
-	f=$(lsmod | grep modules goodix_ts_9896);	
-	[ -n "$f" ] && return; # goodix_ts is loaded - return
-	
-	# try to load the goodix_ts module
-	modprobe -d /lib/modules goodix_ts_9896;
+		# try to load the module
+		modprobe -d $path1 $i &> /dev/null || modprobe -d $path2 $i &> /dev/null;
+		[ "$?" = "0" ] && return; # module is successfully loaded - return
+	done
 }
 
 load_touch_drivers;
