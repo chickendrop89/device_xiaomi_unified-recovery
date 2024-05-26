@@ -10,6 +10,7 @@
  export FOX_USE_TAR_BINARY=1
  export FOX_USE_SED_BINARY=1
  export FOX_USE_XZ_UTILS=1
+ export FOX_USE_ZSTD_BINARY=1
  export FOX_ASH_IS_BASH=1
 
  # OrangeFox Addons
