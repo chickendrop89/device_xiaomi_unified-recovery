@@ -1,2 +1,2 @@
-require board=topaz|tapas
+require board=topaz|tapas|sapphire|sapphiren
 
