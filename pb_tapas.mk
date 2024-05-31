@@ -18,7 +18,7 @@ $(call inherit-product, vendor/pb/config/common.mk)
 PRODUCT_DEVICE := tapas
 PRODUCT_NAME := pb_tapas
 PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := Redmi Note 12 4G
+PRODUCT_MODEL := Redmi Note 12/13 4G
 PRODUCT_MANUFACTURER := $(PRODUCT_BRAND)
 
 PRODUCT_GMS_CLIENTID_BASE := android-xiaomi
