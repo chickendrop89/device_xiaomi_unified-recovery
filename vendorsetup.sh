@@ -30,7 +30,7 @@
  export OF_UNBIND_SDCARD_F2FS=1
 
  # Number of list options before scrollbar creation
- export OF_OPTIONS_LIST_NUM=6
+ export OF_OPTIONS_LIST_NUM=9
 
  # Store settings at /data/recovery instead of internal storage
  export FOX_USE_DATA_RECOVERY_FOR_SETTINGS=1
