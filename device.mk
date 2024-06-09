@@ -106,6 +106,7 @@ TW_EXCLUDE_APEX         := true
 TW_INCLUDE_FASTBOOTD    := true
 TWRP_INCLUDE_LOGCAT     := true
 TW_INCLUDE_PYTHON       := true
+TW_NO_SCREEN_BLANK      := true
 TW_FRAMERATE            := 60
 
 # Blacklist Goodix fingerprint. There's no reason to include this input in recovery
