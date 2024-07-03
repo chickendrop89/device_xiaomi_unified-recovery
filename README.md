@@ -4,10 +4,6 @@ Device tree for Xiaomi `bengal` (sm6225-AD) devices
 - Xiaomi Redmi Note _12_ 4G (codenamed `topaz` / `tapas`) (March 2023)
 - Xiaomi Redmi Note _13_ 4G (codenamed `sapphire` / `sapphiren`) (January 2024)
 
-## Automated OrangeFox (Unofficial) builds
-[![GitHub Releases](https://img.shields.io/github/downloads/chickendrop89/device_xiaomi_tapas-recovery/total?style=for-the-badge&logo=github&logoColor=white&label=GitHub%20releases&labelColor=black&color=orange)](https://github.com/chickendrop89/orangefox_device_xiaomi_tapas/releases)
-[![SourceForge](https://img.shields.io/sourceforge/dt/orangefox-device-xiaomi-tapas?style=for-the-badge&logo=sourceforge&logoColor=white&label=SourceForge&labelColor=black&color=orange)](https://sourceforge.net/projects/orangefox-device-xiaomi-tapas/files)
-
 ## Device specifications
 
 Device                  | Xiaomi Redmi Note 12 4G / Redmi Note 13 4G
