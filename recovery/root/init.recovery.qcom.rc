@@ -1,3 +1,10 @@
+service unified-script /system/bin/unified-script.sh
+    user root
+    group root
+    disabled
+    oneshot
+    seclabel u:r:recovery:s0
+
 # Set SELinux to Permissive
 on early-init
     write /sys/fs/selinux/enforce 0
