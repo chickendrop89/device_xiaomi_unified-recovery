@@ -66,6 +66,12 @@
  export CCACHE_MAXSIZE="32G"
  export CCACHE_DIR="/mnt/ccache"
 
+ if [ "$FOX_UNIFIED_BUILD" = "1" ]; 
+  then
+	export FOX_VARIANT="unified"
+	export TARGET_DEVICE_ALT="tapas,sapphire,sapphiren"
+ fi
+
  # Warn if CCACHE_DIR is an invalid directory
  if [ ! -d ${CCACHE_DIR} ];
   then

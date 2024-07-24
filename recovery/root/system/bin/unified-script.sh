@@ -29,32 +29,33 @@ setdevicemodel() {
     resetprop "ro.product.product.model" "$1"
 }
 
-load_tapas()
-{
-    echo "I:Variant-Script: Loaded tapas variant" | tee -a $LOG_PATH
-    setdevicename "tapas"
-    setdevicemodel "23021RAAEG"
+process_device() {
+	local dev=$(getprop "ro.boot.hwname");
+	[ -z "$dev" ] && dev=tapas;
+
+	setdevicename "$dev";
+
+	case "$dev" in
+	topaz)
+		setdevicemodel "23021RAA2Y";
+	;;
+	tapas)
+		setdevicemodel "23021RAAEG";
+	;;
+	sapphiren)
+		setdevicemodel "23124RA7EO";
+	;;
+	sapphire)
+		setdevicemodel "23129RAA4G";
+	;;
+	*)
+		setdevicename "tapas";
+		setdevicemodel "23021RAAEG";
+	;;
+	esac
 }
 
-load_topaz()
-{
-    echo "I:Variant-Script: Loaded topaz (NFC) variant" | tee -a $LOG_PATH
-    setdevicename "topaz"
-    setdevicemodel "23021RAA2Y"
-}
-
-variant=$(resetprop ro.boot.hwname)
-
-case $variant in
-    "tapas")
-        load_tapas
-        ;;
-    "topaz")
-        load_topaz
-        ;;
-    *)
-        load_tapas
-        ;;
-esac
-
-exit 0
+#
+process_device;
+exit 0;
+#

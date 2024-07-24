@@ -18,8 +18,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 # Configure emulated_storage.mk
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
-# OTA Assert
-TARGET_OTA_ASSERT_DEVICE := tapas,topaz
+# devices
+ifeq ($(FOX_VARIANT),unified)
+  TARGET_OTA_ASSERT_DEVICE := topaz,tapas,sapphire,sapphiren
+  PRODUCT_PROPERTY_OVERRIDES += ro.orangefox.variant=$(FOX_VARIANT)
+else
+  TARGET_OTA_ASSERT_DEVICE := topaz,tapas
+endif
 
 # Boot control, Firmware
 PRODUCT_PACKAGES += \
