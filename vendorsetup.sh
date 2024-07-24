@@ -1,6 +1,6 @@
 #!/bin/bash
 
- export TARGET_DEVICE_ALT="topaz"
+ export TARGET_DEVICE_ALT="tapas,sapphire,sapphiren,topaz"
  export OF_MAINTAINER="chickendrop89"
  export FOX_VARIANT="A13+"
 
@@ -26,6 +26,8 @@
  export OF_AB_DEVICE_WITH_RECOVERY_PARTITION=1
  export OF_IGNORE_LOGICAL_MOUNT_ERRORS=1
  export OF_ENABLE_LPTOOLS=1
+ export FOX_RECOVERY_SYSTEM_PARTITION="/dev/block/mapper/system"
+ export FOX_RECOVERY_VENDOR_PARTITION="/dev/block/mapper/vendor"
 
  # Ensure that /sdcard is bind-unmounted before f2fs data repair or format
  export OF_UNBIND_SDCARD_F2FS=1
@@ -65,12 +67,6 @@
  export CCACHE_EXEC="/usr/bin/ccache"
  export CCACHE_MAXSIZE="32G"
  export CCACHE_DIR="/mnt/ccache"
-
- if [ "$FOX_UNIFIED_BUILD" = "1" ]; 
-  then
-	export FOX_VARIANT="unified"
-	export TARGET_DEVICE_ALT="tapas,sapphire,sapphiren"
- fi
 
  # Warn if CCACHE_DIR is an invalid directory
  if [ ! -d ${CCACHE_DIR} ];

@@ -19,12 +19,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
 
 # devices
-ifeq ($(FOX_VARIANT),unified)
-  TARGET_OTA_ASSERT_DEVICE := topaz,tapas,sapphire,sapphiren
-  PRODUCT_PROPERTY_OVERRIDES += ro.orangefox.variant=$(FOX_VARIANT)
-else
-  TARGET_OTA_ASSERT_DEVICE := topaz,tapas
-endif
+TARGET_OTA_ASSERT_DEVICE := topaz,tapas,sapphire,sapphiren
 
 # Boot control, Firmware
 PRODUCT_PACKAGES += \
