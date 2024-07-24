@@ -7,7 +7,7 @@ include $(CLEAR_VARS)
     LOCAL_HOST_REQUIRED_MODULES := depmod
     LOCAL_POST_INSTALL_CMD += \
         mkdir -p $(TARGET_RECOVERY_ROOT_OUT)/vendor; \
-        cp -rf $(LOCAL_PATH)/$(PRODUCT_DEVICE)/vendor $(TARGET_RECOVERY_ROOT_OUT)/; \
+        cp -rf $(LOCAL_PATH)/vendor $(TARGET_RECOVERY_ROOT_OUT)/; \
         echo "Calling depmod on miui_prebuilt"; \
         $(DEPMOD) -b $(TARGET_RECOVERY_ROOT_OUT)/vendor 1.1;
 include $(BUILD_PHONY_PACKAGE)
