@@ -37,18 +37,23 @@ process_device() {
 
 	case "$dev" in
 	topaz)
+        echo "I:Variant-Script: Loaded topaz (NFC) variant" | tee -a $LOG_PATH
 		setdevicemodel "23021RAA2Y";
 	;;
 	tapas)
+        echo "I:Variant-Script: Loaded tapas variant" | tee -a $LOG_PATH
 		setdevicemodel "23021RAAEG";
 	;;
 	sapphiren)
+        echo "I:Variant-Script: Loaded sapphiren (NFC) variant" | tee -a $LOG_PATH
 		setdevicemodel "23124RA7EO";
 	;;
 	sapphire)
+        echo "I:Variant-Script: Loaded sapphire variant" | tee -a $LOG_PATH
 		setdevicemodel "23129RAA4G";
 	;;
 	*)
+        echo "I:Variant-Script: Loaded tapas variant" | tee -a $LOG_PATH
 		setdevicename "tapas";
 		setdevicemodel "23021RAAEG";
 	;;
