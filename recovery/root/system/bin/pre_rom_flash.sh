@@ -21,42 +21,44 @@
 #
 
 LOGMSG() {
-	echo "I:$@" >> /tmp/recovery.log;
+	echo "I:$1" >> /tmp/recovery.log;
 }
 
 do_prep() {
-	local D=/data/cache/recovery/;
-	if [ ! -d $D ]; then
-		LOGMSG "Creating $D ...";
-		mkdir -p $D;
+	directory=/data/cache/recovery/;
+
+	if [ ! -d $directory ]; then
+		LOGMSG "Creating $directory ...";
+		mkdir -p $directory;
 	fi
 
-	D=/metadata/ota/;
+	directory=/metadata/ota/;
 	mount /metadata 2>/dev/null;
-	if [ -d $D ]; then
-		LOGMSG "Wiping $D ...";
-		rm -rf $D 2>/dev/null;
+
+	if [ -d $directory ]; then
+		LOGMSG "Wiping $directory ...";
+		rm -rf $directory;
 	fi
 }
 
 backup_fox() {
-	local f=$1;
-	if [ -f $f ]; then
-		local x=$(unzip -lq $f | grep "payload.bin");
+	file=$1;
+
+	if [ -f "$file" ]; then
+		x=$(unzip -lq "$file" | grep "payload.bin");
 		[ -n "$x" ] && return; # standard payload.bin - no need for a backup
 	fi
 
-	local source="/dev/block/bootdevice/by-name/recovery";
-	local dest="/tmp/fox_backup.img";
-	if [ ! -f $dest ]; then
-		LOGMSG "Backing up OrangeFox to \"$dest\"...";
-		dd bs=1048576 if=$source of=$dest &>/dev/null;
+	source="/dev/block/bootdevice/by-name/recovery";
+	destination="/tmp/fox_backup.img";
+
+	if [ ! -f $destination ]; then
+		LOGMSG "Backing up OrangeFox to \"$destination\"...";
+		dd bs=1048576 if=$source of=$destination >/dev/null 2>&1;
 	fi
 }
 
-##
-	LOGMSG "Running pre-ROM-flash script...";
-	do_prep;
-	backup_fox "$@";
-	exit 0;
-#
+LOGMSG "Running pre-ROM-flash script...";
+do_prep;
+backup_fox "$@";
+exit 0;
