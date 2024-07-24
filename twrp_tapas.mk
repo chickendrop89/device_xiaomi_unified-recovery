@@ -14,6 +14,9 @@ $(call inherit-product, device/xiaomi/tapas/device.mk)
 # Inherit from TWRP common configuration
 $(call inherit-product, vendor/twrp/config/common.mk)
 
+# Import OrangeFox specifics
+$(call inherit-product-if-exists, device/xiaomi/tapas/fox_tapas.mk)
+
 ## Device identifier
 PRODUCT_DEVICE := tapas
 PRODUCT_NAME := twrp_tapas
