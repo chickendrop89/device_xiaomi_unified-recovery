@@ -30,7 +30,7 @@ setdevicemodel() {
 }
 
 process_device() {
-	local dev=$(getprop "ro.boot.hwname");
+	dev=$(getprop "ro.boot.hwname");
 	[ -z "$dev" ] && dev=tapas;
 
 	setdevicename "$dev";
@@ -60,7 +60,5 @@ process_device() {
 	esac
 }
 
-#
 process_device;
 exit 0;
-#
