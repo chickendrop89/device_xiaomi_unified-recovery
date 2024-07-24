@@ -2,7 +2,7 @@
 
  export TARGET_DEVICE_ALT="tapas,sapphire,sapphiren,topaz"
  export OF_MAINTAINER="chickendrop89"
- export FOX_VARIANT="A13+"
+ export FOX_VARIANT="unified"
 
  # Binaries & Tools
  export FOX_USE_BASH_SHELL=1
