@@ -14,6 +14,7 @@
  # OrangeFox Addons
  export FOX_ENABLE_APP_MANAGER=1
  export FOX_DELETE_AROMAFM=1
+ export FOX_DELETE_INITD_ADDON=1
 
  # A/B partitioning
  export FOX_VIRTUAL_AB_DEVICE=1
