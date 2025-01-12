@@ -26,7 +26,7 @@ TARGET_NO_BOOTLOADER          := true
 TARGET_USES_UEFI              := true
 
 # Platform
-TARGET_BOARD_PLATFORM         := bengal
+TARGET_BOARD_PLATFORM         := khaje
 TARGET_BOARD_PLATFORM_GPU     := qcom-adreno610
 BOARD_USES_QCOM_HARDWARE      := true
 

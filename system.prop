@@ -4,7 +4,7 @@ vendor.gatekeeper.disable_spu=true
 keymaster_ver=4.1
 
 # Platform
-ro.board.platform=bengal
+ro.board.platform=khaje
 
 # FUSE passthrough
 persist.sys.fuse.passthrough.enable=true

@@ -1,6 +1,6 @@
 # device_xiaomi_unified-recovery
 
-Device tree for Xiaomi `bengal` (sm6225-AD) devices
+Device tree for Xiaomi `khaje` (sm6225-AD) devices
 - Xiaomi Redmi Note _12_ 4G (codenamed `topaz` / `tapas`) (March 2023)
 - Xiaomi Redmi Note _13_ 4G (codenamed `sapphire` / `sapphiren`) (January 2024)
 
