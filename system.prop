@@ -3,7 +3,7 @@ fbe.metadata.wrappedkey=true
 vendor.gatekeeper.disable_spu=true
 
 # Platform
-ro.board.platform=bengal
+ro.board.platform=khaje
 
 # FUSE passthrough
 persist.sys.fuse.passthrough.enable=true
