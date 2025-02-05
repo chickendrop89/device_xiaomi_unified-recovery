@@ -109,6 +109,11 @@ TW_INCLUDE_PYTHON       := true
 TW_NO_SCREEN_BLANK      := true
 TW_FRAMERATE            := 60
 
+# TWRP - Partition tools
+# PBRP source does not offer TW_ENABLE_ALL_PARTITION_TOOLS at the moment
+TW_INCLUDE_LPTOOLS := true
+TW_INCLUDE_LPDUMP  := true
+
 # Blacklist Goodix fingerprint. There's no reason to include this input in recovery
 TW_INPUT_BLACKLIST := "uinput-goodix"
 
