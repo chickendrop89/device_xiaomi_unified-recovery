@@ -25,9 +25,6 @@ OF_USE_GREEN_LED := 0
 # Remove the loop block errors after flashing ZIPs (Workaround)
 OF_LOOP_DEVICE_ERRORS_TO_LOG := 1
 
-# Use LZ4 ramdisk compression as specified in BoardConfig.mk
-OF_USE_LZ4_COMPRESSION := 1
-
 # Security (Disables MTP & ADB during password prompt)
 OF_ADVANCED_SECURITY := 1
 
