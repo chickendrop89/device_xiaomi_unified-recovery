@@ -110,7 +110,10 @@ TW_INCLUDE_PYTHON       := true
 TW_NO_SCREEN_BLANK      := true
 TW_FRAMERATE            := 60
 
-# TWRP notch offsets
+# TWRP - Partition tools
+TW_ENABLE_ALL_PARTITION_TOOLS := true
+
+# TWRP - Notch offsets
 TW_STATUS_ICONS_ALIGN := center
 TW_Y_OFFSET := 99
 TW_H_OFFSET := -99
