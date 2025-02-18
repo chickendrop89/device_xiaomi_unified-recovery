@@ -33,3 +33,6 @@ OF_UNBIND_SDCARD_F2FS := 1
 
 # Number of list options before scrollbar creation
 OF_OPTIONS_LIST_NUM := 9
+
+# Use legacy code to fix quirky clock issues
+OF_USE_LEGACY_TIME_FIXUP := 1
