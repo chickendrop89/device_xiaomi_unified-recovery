@@ -1,6 +1,6 @@
-# device_xiaomi_unified-recovery
+# device_xiaomi_unified_gems-recovery
 
-Device tree for Xiaomi `khaje` (sm6225-AD) devices
+Device tree for these Xiaomi gemstone devices
 - Xiaomi Redmi Note _12_ 4G (codenamed `topaz` / `tapas`) (March 2023)
 - Xiaomi Redmi Note _13_ 4G (codenamed `sapphire` / `sapphiren`) (January 2024)
 
@@ -8,7 +8,7 @@ Device tree for Xiaomi `khaje` (sm6225-AD) devices
 
 Device                  | Xiaomi Redmi Note 12 4G / Redmi Note 13 4G
 -----------------------:|:-------------------------------------
-SoC                     | Qualcomm Snapdragon® 685 (SM6225)
+SoC                     | Qualcomm Snapdragon® 685 (SM6225-AD) (Board: `khaje`)
 CPU                     | Octa-core (4x2.8 GHz Cortex-A73 & 4x1.9 GHz Cortex-A53)
 GPU                     | Adreno 610
 Memory                  | 4/6/8 GB RAM
