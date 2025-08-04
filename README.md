@@ -1,4 +1,4 @@
-# device_xiaomi_unified-recovery
+# device_xiaomi_gemstones-recovery
 
 Device tree for Xiaomi `khaje` (sm6225-AD) devices
 - Xiaomi Redmi Note _12_ 4G (codenamed `topaz` / `tapas`) (March 2023)
