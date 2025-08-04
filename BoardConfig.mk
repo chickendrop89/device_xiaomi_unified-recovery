@@ -50,10 +50,6 @@ BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT :=
 # Use LZ4 Ramdisk compression instead of GZIP
 BOARD_RAMDISK_USE_LZ4 := true
 
-# Power
-ENABLE_CPUSETS    := true
-ENABLE_SCHEDBOOST := true
-
 # Verified Boot
 BOARD_AVB_ENABLE := true
 BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3 # disable hashtree + verification
