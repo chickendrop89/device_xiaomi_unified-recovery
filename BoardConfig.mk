@@ -21,33 +21,26 @@ TARGET_2ND_CPU_ABI2        := armeabi
 TARGET_2ND_CPU_VARIANT     := cortex-a53
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a53
 
-# Bootloader
-TARGET_NO_BOOTLOADER          := true
-TARGET_USES_UEFI              := true
-
 # Platform
 TARGET_BOARD_PLATFORM         := khaje
 TARGET_BOARD_PLATFORM_GPU     := qcom-adreno610
+TARGET_USES_UEFI              := true
 BOARD_USES_QCOM_HARDWARE      := true
 
-# Kernel
-BOARD_KERNEL_PAGESIZE         := 4096
+# Kernel / Recovery image
 TARGET_KERNEL_ARCH            := arm64
 TARGET_KERNEL_HEADER_ARCH     := arm64
+TARGET_PREBUILT_KERNEL        := $(DEVICE_PATH)/prebuilt/kernel
+
+BOARD_KERNEL_PAGESIZE         := 4096
 BOARD_KERNEL_IMAGE_NAME       := Image
 BOARD_BOOT_HEADER_VERSION     := 4
-TARGET_KERNEL_CLANG_COMPILE   := true
-TARGET_PREBUILT_KERNEL        := $(DEVICE_PATH)/prebuilt/kernel
 BOARD_MKBOOTIMG_ARGS          += --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_MKBOOTIMG_ARGS          += --pagesize $(BOARD_KERNEL_PAGESIZE)
-
-# device information for "fastboot update <zip-file>"
-TARGET_BOARD_INFO_FILE := $(DEVICE_PATH)/board-info.txt
 
 # GSI && GKI
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
 BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT := true
-BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3 # disable hashtree/verification
 BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
 
 # Despite being VA/B device, there is a dedicated recovery partition
@@ -63,6 +56,8 @@ ENABLE_SCHEDBOOST := true
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3 # disable hashtree + verification
+
 BOARD_AVB_VBMETA_SYSTEM := system
 BOARD_AVB_VBMETA_SYSTEM_KEY_PATH := external/avb/test/data/testkey_rsa2048.pem
 BOARD_AVB_VBMETA_SYSTEM_ALGORITHM := SHA256_RSA2048
@@ -116,11 +111,16 @@ TARGET_USES_MKE2FS            := true
 # Workaround for error copying vendor files to recovery ramdisk
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 
-# System Properties
-TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
-
 # Recovery
+TARGET_SYSTEM_PROP := \
+    $(DEVICE_PATH)/system.prop
+
+TARGET_RECOVERY_FSTAB := \
+    $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
+
+TARGET_BOARD_INFO_FILE := \
+    $(DEVICE_PATH)/board-info.txt
+
 TARGET_RECOVERY_PIXEL_FORMAT := "RGBX_8888"
-TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/system/etc/recovery.fstab
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TARGET_USES_LOGD := true
