@@ -25,7 +25,7 @@
 /vbmeta_system         emmc    /dev/block/bootdevice/by-name/vbmeta_system                        flags=display="VBMeta_System";backup=1;slotselect;flashimg=1
 
 # Persistent Firmware & Properties
-/persist               ext4    /dev/block/bootdevice/by-name/persist                              flags=display="Persist"
+/persist               ext4    /dev/block/bootdevice/by-name/persist                              flags=display="Persist";backup=0
 /persist_image         emmc    /dev/block/bootdevice/by-name/persist                              flags=display="Persist";flashimg=1;backup=1
 
 # Modem/Firmware partitions
