@@ -20,3 +20,24 @@ MicroSD                 | Up to 1024 GB (1TB)                  | Up to 1024 GB (
 Battery                 | Non-removable Li-Po 5000 mAh         | Non-removable Li-Ion 7000 mAh
 Dimensions              | ~165.7 x 76 x 7.9 mm                 | 171.1 x 80.5 x 8.6 mm
 Display                 | 6.67" AMOLED, 120Hz, 1080x2400       | 6.9" IPS LCD, 144Hz, 1080x2340
+
+## Branch information
+There are 4 branches in this repository:
+- fox-12.1 - Main OFRP
+- fox-14.1 - Experimental OFRP
+- pbrp-12.1 - Main PBRP
+- twrp-12.1 - Main TWRP
+
+## `Creek` notes
+These two devices are not yet fully supported, but the recoveries might be functional.
+
+Modern HyperOS devices are ridiculously hard to unlock with the new requirements
+and they were not tested yet. Though some initial bringup was made by `DarthJabba9`.
+
+## How to build
+This recovery tree was initially made for `topaz/tapas`. For historical purposes,
+build the `twrp_tapas` target, it will work for the other devices as well.
+
+```shell
+lunch twrp_tapas-eng && mka adbd recoveryimage
+```
