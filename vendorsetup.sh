@@ -17,6 +17,11 @@
  export FOX_DELETE_AROMAFM=1
  export FOX_DELETE_INITD_ADDON=1
 
+ # KernelSU / SukiSu support
+ export FOX_ENABLE_KERNELSU_SUPPORT=1
+ export FOX_ENABLE_KERNELSU_NEXT_SUPPORT=1
+ export FOX_ENABLE_SUKISU_SUPPORT=1
+
  # A/B partitioning
  export FOX_VIRTUAL_AB_DEVICE=1
  export FOX_RECOVERY_SYSTEM_PARTITION="/dev/block/mapper/system"
