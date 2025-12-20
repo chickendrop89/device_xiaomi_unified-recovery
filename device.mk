@@ -128,7 +128,8 @@ TW_BRIGHTNESS_PATH      := "/sys/class/backlight/panel0-backlight/brightness"
 
 # Vendor modules required for the recovery to function properly
 TW_LOAD_VENDOR_MODULES  += "focaltech_ts_i2c.ko goodix_ts_9896.ko
-TW_LOAD_VENDOR_MODULES  += adsp_loader_dlkm.ko qti_battery_charger.ko"
+TW_LOAD_VENDOR_MODULES  += adsp_loader_dlkm.ko qti_battery_charger.ko
+TW_LOAD_VENDOR_MODULES  += nt36672s_spi.ko td4376_spi.ko"
 
 TW_BATTERY_SYSFS_WAIT_SECONDS := 6
 TW_EXCLUDE_DEFAULT_USB_INIT   := true
