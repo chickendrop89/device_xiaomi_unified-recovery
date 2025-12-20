@@ -21,7 +21,7 @@
 
 load_touch_drivers() {
     paths="/lib/modules /vendor/lib/modules/1.1";
-    modules="focaltech_ts_i2c goodix_ts_9896";
+    modules="focaltech_ts_i2c goodix_ts_9896 xiaomi_touch_game xiaomi_tp nt36672s_spi td4376_spi";
 
     for module in $modules; do
 		# Check if module is not loaded
